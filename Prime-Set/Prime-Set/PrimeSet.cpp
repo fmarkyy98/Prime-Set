@@ -66,14 +66,14 @@ std::ostream& operator << (std::ostream& os, const PrimeSet& ps)
 	{
 		if (l_ps.contains(i))
 		{
-			if (!printedAlredy)
+			if (printedAlredy)
 			{
-				os << i;
-				printedAlredy = true;
+				os << "," << i;
 			}
 			else
 			{
-				os << "," << i;
+				os << i;
+				printedAlredy = true;
 			}
 			l_ps.remove(i);
 		}
